@@ -12,8 +12,10 @@ namespace GeekPizza.Tests.UI
         {
             if (platform == Platform.Android)
             {
+                Console.WriteLine(Environment.CurrentDirectory);
                 return ConfigureApp
                     .Android
+                    .ApkFile(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", @"GeekPizza1\GeekPizza1.Android\bin\Release\com.companyname.GeekPizza1.apk"))
                     .StartApp();
             }
 
