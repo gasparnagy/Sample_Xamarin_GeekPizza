@@ -41,6 +41,7 @@
     <Compile Include="Helpers\MessengingCenterAlert.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\PizzaMenuItem.cs" />
     <Compile Include="Models\PizzaOrder.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CartViewModel.cs" />
+    <Compile Include="ViewModels\EnterAddressViewModel.cs" />
     <Compile Include="ViewModels\ItemDetailViewModel.cs" />
     <Compile Include="ViewModels\PizzaMenuViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
@@ -61,6 +63,9 @@
     </Compile>
     <Compile Include="Views\CartPage.xaml.cs">
       <DependentUpon>CartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnterAddressPage.xaml.cs">
+      <DependentUpon>EnterAddressPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ItemDetailPage.xaml.cs">
       <DependentUpon>ItemDetailPage.xaml</DependentUpon>
@@ -110,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\CartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EnterAddressPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

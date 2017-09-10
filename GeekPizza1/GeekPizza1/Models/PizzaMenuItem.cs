@@ -2,18 +2,18 @@
 {
     public class PizzaMenuItem : BaseDataObject
     {
-        string name = string.Empty;
+        string _name = string.Empty;
         public string Name
         {
-            get { return name; }
-            set { SetProperty(ref name, value); }
+            get => _name;
+            set => SetProperty(ref _name, value);
         }
 
-        string ingredients = string.Empty;
+        string _ingredients = string.Empty;
         public string Ingredients
         {
-            get { return ingredients; }
-            set { SetProperty(ref ingredients, value); }
+            get => _ingredients;
+            set => SetProperty(ref _ingredients, value);
         }
     }
 }

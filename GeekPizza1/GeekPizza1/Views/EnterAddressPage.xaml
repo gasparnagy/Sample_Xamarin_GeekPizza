@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeekPizza1.Views.EnterAddressPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Street address" FontSize="Medium" />
+            <Entry Text="{Binding DeliveryAddress.StreetAddress}" FontSize="Small" />
+            <Label Text="City" FontSize="Medium" />
+            <Entry Text="{Binding DeliveryAddress.City}" FontSize="Small" />
+            <Label Text="Zip" FontSize="Medium" />
+            <Entry Text="{Binding DeliveryAddress.Zip}" FontSize="Small" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
