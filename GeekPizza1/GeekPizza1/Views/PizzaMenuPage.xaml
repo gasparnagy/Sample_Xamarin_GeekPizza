@@ -6,7 +6,7 @@
              Navigation="{Binding Navigation}"
              x:Name="BrowseItemsPage">
   <ContentPage.ToolbarItems>
-  	<ToolbarItem Text="Add Item" Clicked="AddItem_Clicked" />
+    <ToolbarItem Text="Show Cart" Command="{Binding ShowCartCommand}" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
     <StackLayout>

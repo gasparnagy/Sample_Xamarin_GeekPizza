@@ -16,6 +16,7 @@ namespace GeekPizza1.ViewModels
         public ObservableRangeCollection<PizzaMenuItem> Items { get; }
         public ICommand InitializeStoreCommand { get; }
         public ICommand ItemTappedCommand { get; }
+        public ICommand ShowCartCommand { get; }
 
         public PizzaMenuViewModel(Store store)
         {
@@ -26,7 +27,11 @@ namespace GeekPizza1.ViewModels
             ItemTappedCommand = new Command(async (item) =>
             {
                 _store.AddToCart((PizzaMenuItem)item);
-                await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
+                await NavigateToCartPage();
+            });
+            ShowCartCommand = new Command(async () =>
+            {
+                await NavigateToCartPage();
             });
 
             MessagingCenter.Subscribe<NewItemPage, PizzaMenuItem>(this, "AddItem", async (obj, item) =>
@@ -37,6 +42,11 @@ namespace GeekPizza1.ViewModels
             });
 
             InitializeStoreCommand.Execute(null);
+        }
+
+        private async Task NavigateToCartPage()
+        {
+            await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
         }
 
         async Task InitializeStore()
