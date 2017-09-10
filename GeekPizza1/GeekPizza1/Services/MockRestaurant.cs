@@ -33,5 +33,17 @@ namespace GeekPizza1.Services
 
             return await Task.FromResult(_menuItems);
         }
+
+        public async Task<Address> GetDefaultDeliveryAddressAsync()
+        {
+            await InitializeAsync();
+
+            return await Task.FromResult(new Address
+            {
+                StreetAddress = "One Marina Boulevard",
+                City = "Singapore",
+                Zip = "018989"
+            });
+        }
     }
 }

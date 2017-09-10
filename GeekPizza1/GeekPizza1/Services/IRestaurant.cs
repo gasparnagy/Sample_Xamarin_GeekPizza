@@ -8,5 +8,6 @@ namespace GeekPizza1.Services
     public interface IRestaurant
     {
         Task<IEnumerable<PizzaMenuItem>> GetMenuItemsAsync();
+        Task<Address> GetDefaultDeliveryAddressAsync();
     }
 }

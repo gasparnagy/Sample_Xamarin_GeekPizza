@@ -26,6 +26,13 @@ namespace GeekPizza1.Services
                 return;
 
             PizzaMenuItems.AddRange(await _restaurant.GetMenuItemsAsync());
+            var defaultDeliveryAddress = await _restaurant.GetDefaultDeliveryAddressAsync();
+            if (defaultDeliveryAddress != null)
+            {
+                Order.DeliveryAddress.StreetAddress = defaultDeliveryAddress.StreetAddress;
+                Order.DeliveryAddress.City = defaultDeliveryAddress.City;
+                Order.DeliveryAddress.Zip = defaultDeliveryAddress.Zip;
+            }
             _isInitialized = true;
         }
 
