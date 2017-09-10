@@ -8,6 +8,12 @@ namespace GeekPizza1.Models
 {
     public class PizzaOrderItem
     {
+        public PizzaOrderItem(PizzaMenuItem pizza, int quantity)
+        {
+            Pizza = pizza;
+            Quantity = quantity;
+        }
+
         public PizzaMenuItem Pizza { get; set; }
         public int Quantity { get; set; }
     }

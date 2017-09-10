@@ -28,5 +28,10 @@ namespace GeekPizza1.Services
             PizzaMenuItems.AddRange(await _restaurant.GetMenuItemsAsync());
             _isInitialized = true;
         }
+
+        public void AddToCart(PizzaMenuItem item)
+        {
+            Order.Items.Add(new PizzaOrderItem(item, 1));
+        }
     }
 }

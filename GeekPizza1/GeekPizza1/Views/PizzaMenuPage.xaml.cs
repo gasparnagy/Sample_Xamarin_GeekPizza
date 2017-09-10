@@ -10,10 +10,12 @@ namespace GeekPizza1.Views
 {
     public partial class PizzaMenuPage : ContentPage
     {
+        private readonly Store _store;
         PizzaMenuViewModel viewModel;
 
         public PizzaMenuPage(Store store)
         {
+            _store = store;
             InitializeComponent();
 
             BindingContext = viewModel = new PizzaMenuViewModel(store);
@@ -25,7 +27,10 @@ namespace GeekPizza1.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            _store.AddToCart(item);
+
+            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
 
             // Manually deselect item
             ItemsListView.SelectedItem = null;
