@@ -43,8 +43,13 @@
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
     <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\PizzaMenuItem.cs" />
+    <Compile Include="Models\PizzaOrder.cs" />
+    <Compile Include="Models\PizzaOrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IDataStore.cs" />
+    <Compile Include="Services\IRestaurant.cs" />
+    <Compile Include="Services\MockRestaurant.cs" />
+    <Compile Include="Services\Store.cs" />
     <Compile Include="Services\MockDataStore.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

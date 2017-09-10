@@ -78,9 +78,9 @@ namespace GeekPizza1.Services
             items = new List<PizzaMenuItem>();
             var _items = new List<PizzaMenuItem>
             {
-                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Aslak Hellesøy's Cucumber", Ingredients="Cucumber, Gherkin, Pickles"},
-                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Uncle Bob's FitNesse", Ingredients="Chicken, Low cal cheese"},
-                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Chris Matts' GTW", Ingredients="Garlic, Wasabi, Tomato"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "XAslak Hellesøy's Cucumber", Ingredients="Cucumber, Gherkin, Pickles"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "XUncle Bob's FitNesse", Ingredients="Chicken, Low cal cheese"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "XChris Matts' GTW", Ingredients="Garlic, Wasabi, Tomato"},
             };
 
             foreach (PizzaMenuItem item in _items)

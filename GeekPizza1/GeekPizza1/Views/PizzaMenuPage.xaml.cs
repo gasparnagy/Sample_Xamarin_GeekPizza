@@ -1,6 +1,7 @@
 ﻿using System;
 
 using GeekPizza1.Models;
+using GeekPizza1.Services;
 using GeekPizza1.ViewModels;
 
 using Xamarin.Forms;
@@ -11,11 +12,11 @@ namespace GeekPizza1.Views
     {
         PizzaMenuViewModel viewModel;
 
-        public PizzaMenuPage()
+        public PizzaMenuPage(Store store)
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new PizzaMenuViewModel();
+            BindingContext = viewModel = new PizzaMenuViewModel(store);
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -40,7 +41,7 @@ namespace GeekPizza1.Views
             base.OnAppearing();
 
             if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+                viewModel.InitializeStoreCommand.Execute(null);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using GeekPizza1.Views;
+﻿using GeekPizza1.Services;
+using GeekPizza1.Views;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,11 +18,14 @@ namespace GeekPizza1
 
         public static void SetMainPage()
         {
+            var restaurant = DependencyService.Get<IRestaurant>();
+            var store = new Store(restaurant);
+
             Current.MainPage = new TabbedPage
             {
                 Children =
                 {
-                    new NavigationPage(new PizzaMenuPage())
+                    new NavigationPage(new PizzaMenuPage(store))
                     {
                         Title = "Browse",
                         Icon = Device.OnPlatform("tab_feed.png",null,null)
