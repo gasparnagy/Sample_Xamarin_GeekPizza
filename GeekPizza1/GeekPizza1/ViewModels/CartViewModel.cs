@@ -19,6 +19,7 @@ namespace GeekPizza1.ViewModels
 
         public CartViewModel(Store store)
         {
+            Title = "Cart";
             Items = store.Order.Items;
             OrderCommand = new Command(async () =>
             {

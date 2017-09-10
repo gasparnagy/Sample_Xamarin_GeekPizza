@@ -21,22 +21,7 @@ namespace GeekPizza1
             var restaurant = DependencyService.Get<IRestaurant>();
             var store = new Store(restaurant);
 
-            Current.MainPage = new TabbedPage
-            {
-                Children =
-                {
-                    new NavigationPage(new PizzaMenuPage(store))
-                    {
-                        Title = "Browse",
-                        Icon = Device.OnPlatform("tab_feed.png",null,null)
-                    },
-                    new NavigationPage(new AboutPage())
-                    {
-                        Title = "About",
-                        Icon = Device.OnPlatform("tab_about.png",null,null)
-                    },
-                }
-            };
+            Current.MainPage = new NavigationPage(new PizzaMenuPage(store));
         }
     }
 }

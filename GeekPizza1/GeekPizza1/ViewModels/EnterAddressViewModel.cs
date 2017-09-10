@@ -17,6 +17,7 @@ namespace GeekPizza1.ViewModels
         public EnterAddressViewModel(Store store)
         {
             _store = store;
+            Title = "Delivery Address";
             DeliveryAddress = store.Order.DeliveryAddress;
         }
     }
