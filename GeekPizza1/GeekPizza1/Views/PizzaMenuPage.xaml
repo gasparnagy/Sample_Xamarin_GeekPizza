@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GeekPizza1.Views.ItemsPage"
+             x:Class="GeekPizza1.Views.PizzaMenuPage"
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
   <ContentPage.ToolbarItems>
@@ -22,11 +22,11 @@
           <DataTemplate>
             <ViewCell>
               <StackLayout Padding="10">
-                <Label Text="{Binding Text}"
+                <Label Text="{Binding Name}"
                        LineBreakMode="NoWrap"
                        Style="{DynamicResource ListItemTextStyle}"
                        FontSize="16"/>
-                <Label Text="{Binding Description}"
+                                <Label Text="{Binding Ingredients}"
                        LineBreakMode="NoWrap"
                        Style="{DynamicResource ListItemDetailTextStyle}"
                        FontSize="13"/>

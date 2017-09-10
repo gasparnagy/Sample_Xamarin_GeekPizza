@@ -10,20 +10,20 @@ using Xamarin.Forms;
 
 namespace GeekPizza1.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class PizzaMenuViewModel : BaseViewModel
     {
-        public ObservableRangeCollection<Item> Items { get; set; }
+        public ObservableRangeCollection<PizzaMenuItem> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public PizzaMenuViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableRangeCollection<Item>();
+            Title = "Pizza Menu";
+            Items = new ObservableRangeCollection<PizzaMenuItem>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, PizzaMenuItem>(this, "AddItem", async (obj, item) =>
             {
-                var _item = item as Item;
+                var _item = item as PizzaMenuItem;
                 Items.Add(_item);
                 await DataStore.AddItemAsync(_item);
             });

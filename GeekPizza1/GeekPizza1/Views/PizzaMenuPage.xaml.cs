@@ -7,20 +7,20 @@ using Xamarin.Forms;
 
 namespace GeekPizza1.Views
 {
-    public partial class ItemsPage : ContentPage
+    public partial class PizzaMenuPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        PizzaMenuViewModel viewModel;
 
-        public ItemsPage()
+        public PizzaMenuPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new PizzaMenuViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
+            var item = args.SelectedItem as PizzaMenuItem;
             if (item == null)
                 return;
 

@@ -21,7 +21,7 @@ namespace GeekPizza1
             {
                 Children =
                 {
-                    new NavigationPage(new ItemsPage())
+                    new NavigationPage(new PizzaMenuPage())
                     {
                         Title = "Browse",
                         Icon = Device.OnPlatform("tab_feed.png",null,null)

@@ -11,7 +11,7 @@ namespace GeekPizza1.ViewModels
         /// <summary>
         /// Get the azure service instance
         /// </summary>
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<PizzaMenuItem> DataStore => DependencyService.Get<IDataStore<PizzaMenuItem>>();
 
         bool isBusy = false;
         public bool IsBusy

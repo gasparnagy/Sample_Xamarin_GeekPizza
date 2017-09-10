@@ -4,11 +4,11 @@ namespace GeekPizza1.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public PizzaMenuItem PizzaMenuItem { get; set; }
+        public ItemDetailViewModel(PizzaMenuItem pizzaMenuItem = null)
         {
-            Title = item.Text;
-            Item = item;
+            Title = pizzaMenuItem.Name;
+            PizzaMenuItem = pizzaMenuItem;
         }
 
         int quantity = 1;

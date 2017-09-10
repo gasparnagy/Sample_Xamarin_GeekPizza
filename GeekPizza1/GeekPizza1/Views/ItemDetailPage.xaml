@@ -4,7 +4,7 @@
              x:Class="GeekPizza1.Views.ItemDetailPage"
              Title="{Binding Title}">
 	<StackLayout Spacing="20" Padding="15">
-		<Label Text="{Binding Item.Text}" FontSize="Medium"/>
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        <Label Text="{Binding PizzaMenuItem.Name}" FontSize="Medium"/>
+        <Label Text="{Binding PizzaMenuItem.Ingredients}" FontSize="Small"/>
     </StackLayout>
 </ContentPage>

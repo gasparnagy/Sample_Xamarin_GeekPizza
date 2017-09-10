@@ -8,16 +8,16 @@ namespace GeekPizza1.Views
 {
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public PizzaMenuItem PizzaMenuItem { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            PizzaMenuItem = new PizzaMenuItem
             {
-                Text = "Item name",
-                Description = "This is a nice description"
+                Name = "Item name",
+                Ingredients = "This is a nice description"
             };
 
             BindingContext = this;
@@ -25,7 +25,7 @@ namespace GeekPizza1.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddItem", PizzaMenuItem);
             await Navigation.PopToRootAsync();
         }
     }

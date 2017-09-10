@@ -10,49 +10,49 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(GeekPizza1.Services.MockDataStore))]
 namespace GeekPizza1.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<PizzaMenuItem>
     {
         bool isInitialized;
-        List<Item> items;
+        List<PizzaMenuItem> items;
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(PizzaMenuItem pizzaMenuItem)
         {
             await InitializeAsync();
 
-            items.Add(item);
+            items.Add(pizzaMenuItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(PizzaMenuItem pizzaMenuItem)
         {
             await InitializeAsync();
 
-            var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var _item = items.Where((PizzaMenuItem arg) => arg.Id == pizzaMenuItem.Id).FirstOrDefault();
             items.Remove(_item);
-            items.Add(item);
+            items.Add(pizzaMenuItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(Item item)
+        public async Task<bool> DeleteItemAsync(PizzaMenuItem pizzaMenuItem)
         {
             await InitializeAsync();
 
-            var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var _item = items.Where((PizzaMenuItem arg) => arg.Id == pizzaMenuItem.Id).FirstOrDefault();
             items.Remove(_item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<PizzaMenuItem> GetItemAsync(string id)
         {
             await InitializeAsync();
 
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<PizzaMenuItem>> GetItemsAsync(bool forceRefresh = false)
         {
             await InitializeAsync();
 
@@ -75,18 +75,15 @@ namespace GeekPizza1.Services
             if (isInitialized)
                 return;
 
-            items = new List<Item>();
-            var _items = new List<Item>
+            items = new List<PizzaMenuItem>();
+            var _items = new List<PizzaMenuItem>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Buy some cat food", Description="The cats are hungry"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Learn F#", Description="Seems like a functional idea"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Learn to play guitar", Description="Noted"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Buy some new candles", Description="Pine and cranberry for that winter feel"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Complete holiday shopping", Description="Keep it a secret!"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Finish a todo list", Description="Done"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Aslak Hellesøy's Cucumber", Ingredients="Cucumber, Gherkin, Pickles"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Uncle Bob's FitNesse", Ingredients="Chicken, Low cal cheese"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Chris Matts' GTW", Ingredients="Garlic, Wasabi, Tomato"},
             };
 
-            foreach (Item item in _items)
+            foreach (PizzaMenuItem item in _items)
             {
                 items.Add(item);
             }
