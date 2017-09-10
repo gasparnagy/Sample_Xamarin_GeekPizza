@@ -21,21 +21,6 @@ namespace GeekPizza1.Views
             BindingContext = viewModel = new PizzaMenuViewModel(store);
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as PizzaMenuItem;
-            if (item == null)
-                return;
-
-            _store.AddToCart(item);
-
-            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-            await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
-
-            // Manually deselect item
-            ItemsListView.SelectedItem = null;
-        }
-
         async void AddItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NewItemPage());
@@ -47,6 +32,21 @@ namespace GeekPizza1.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.InitializeStoreCommand.Execute(null);
+        }
+
+        private async void PizzaMenuItem_Tapped(object sender, ItemTappedEventArgs args)
+        {
+            var item = args.Item as PizzaMenuItem;
+            if (item == null)
+                return;
+
+            _store.AddToCart(item);
+
+            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
+
+            // Manually deselect item
+            ItemsListView.SelectedItem = null;
         }
     }
 }
