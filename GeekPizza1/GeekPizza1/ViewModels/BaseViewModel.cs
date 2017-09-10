@@ -13,6 +13,8 @@ namespace GeekPizza1.ViewModels
         /// </summary>
         public IDataStore<PizzaMenuItem> DataStore => DependencyService.Get<IDataStore<PizzaMenuItem>>();
 
+        public INavigation Navigation { get; set; }
+
         bool isBusy = false;
         public bool IsBusy
         {

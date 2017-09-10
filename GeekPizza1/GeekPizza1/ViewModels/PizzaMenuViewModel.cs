@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using GeekPizza1.Helpers;
 using GeekPizza1.Models;
 using GeekPizza1.Services;
 using GeekPizza1.Views;
-
 using Xamarin.Forms;
 
 namespace GeekPizza1.ViewModels
@@ -14,8 +13,9 @@ namespace GeekPizza1.ViewModels
     public class PizzaMenuViewModel : BaseViewModel
     {
         private readonly Store _store;
-        public ObservableRangeCollection<PizzaMenuItem> Items { get; set; }
-        public Command InitializeStoreCommand { get; set; }
+        public ObservableRangeCollection<PizzaMenuItem> Items { get; }
+        public ICommand InitializeStoreCommand { get; }
+        public ICommand ItemTappedCommand { get; }
 
         public PizzaMenuViewModel(Store store)
         {
@@ -23,6 +23,11 @@ namespace GeekPizza1.ViewModels
             Title = "Pizza Menu";
             Items = store.PizzaMenuItems;
             InitializeStoreCommand = new Command(async () => await InitializeStore());
+            ItemTappedCommand = new Command(async (item) =>
+            {
+                _store.AddToCart((PizzaMenuItem)item);
+                await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
+            });
 
             MessagingCenter.Subscribe<NewItemPage, PizzaMenuItem>(this, "AddItem", async (obj, item) =>
             {
@@ -30,6 +35,8 @@ namespace GeekPizza1.ViewModels
                 Items.Add(_item);
                 await DataStore.AddItemAsync(_item);
             });
+
+            InitializeStoreCommand.Execute(null);
         }
 
         async Task InitializeStore()

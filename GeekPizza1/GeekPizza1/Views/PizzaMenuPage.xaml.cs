@@ -1,24 +1,20 @@
 ﻿using System;
-
 using GeekPizza1.Models;
 using GeekPizza1.Services;
 using GeekPizza1.ViewModels;
-
 using Xamarin.Forms;
 
 namespace GeekPizza1.Views
 {
     public partial class PizzaMenuPage : ContentPage
     {
-        private readonly Store _store;
-        PizzaMenuViewModel viewModel;
+        private readonly PizzaMenuViewModel _viewModel;
 
         public PizzaMenuPage(Store store)
         {
-            _store = store;
             InitializeComponent();
 
-            BindingContext = viewModel = new PizzaMenuViewModel(store);
+            BindingContext = _viewModel = new PizzaMenuViewModel(store);
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
@@ -26,24 +22,13 @@ namespace GeekPizza1.Views
             await Navigation.PushAsync(new NewItemPage());
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.InitializeStoreCommand.Execute(null);
-        }
-
-        private async void PizzaMenuItem_Tapped(object sender, ItemTappedEventArgs args)
+        private void PizzaMenuItem_Tapped(object sender, ItemTappedEventArgs args)
         {
             var item = args.Item as PizzaMenuItem;
             if (item == null)
                 return;
 
-            _store.AddToCart(item);
-
-            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-            await Navigation.PushAsync(new CartPage(new CartViewModel(_store)));
+            _viewModel.ItemTappedCommand.Execute(item);
 
             // Manually deselect item
             ItemsListView.SelectedItem = null;
