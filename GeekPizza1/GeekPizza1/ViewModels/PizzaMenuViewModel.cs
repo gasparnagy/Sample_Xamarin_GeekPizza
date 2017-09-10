@@ -34,13 +34,6 @@ namespace GeekPizza1.ViewModels
                 await NavigateToCartPage();
             });
 
-            MessagingCenter.Subscribe<NewItemPage, PizzaMenuItem>(this, "AddItem", async (obj, item) =>
-            {
-                var _item = item as PizzaMenuItem;
-                Items.Add(_item);
-                await DataStore.AddItemAsync(_item);
-            });
-
             InitializeStoreCommand.Execute(null);
         }
 

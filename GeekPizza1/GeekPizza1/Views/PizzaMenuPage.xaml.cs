@@ -17,11 +17,6 @@ namespace GeekPizza1.Views
             BindingContext = _viewModel = new PizzaMenuViewModel(store);
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new NewItemPage());
-        }
-
         private void PizzaMenuItem_Tapped(object sender, ItemTappedEventArgs args)
         {
             var item = args.Item as PizzaMenuItem;

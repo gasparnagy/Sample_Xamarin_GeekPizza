@@ -8,11 +8,6 @@ namespace GeekPizza1.ViewModels
 {
     public class BaseViewModel : ObservableObject
     {
-        /// <summary>
-        /// Get the azure service instance
-        /// </summary>
-        public IDataStore<PizzaMenuItem> DataStore => DependencyService.Get<IDataStore<PizzaMenuItem>>();
-
         public INavigation Navigation { get; set; }
 
         bool isBusy = false;
