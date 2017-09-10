@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeekPizza1.Views.EnterAddressPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             Navigation="{Binding Navigation}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Pay" Command="{Binding PayCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Street address" FontSize="Medium" />

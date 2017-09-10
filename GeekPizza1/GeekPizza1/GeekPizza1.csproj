@@ -55,6 +55,7 @@
     <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\EnterAddressViewModel.cs" />
     <Compile Include="ViewModels\PizzaMenuViewModel.cs" />
+    <Compile Include="ViewModels\ThankYouViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
@@ -66,6 +67,9 @@
     </Compile>
     <Compile Include="Views\PizzaMenuPage.xaml.cs">
       <DependentUpon>PizzaMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThankYouPage.xaml.cs">
+      <DependentUpon>ThankYouPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\EnterAddressPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ThankYouPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
