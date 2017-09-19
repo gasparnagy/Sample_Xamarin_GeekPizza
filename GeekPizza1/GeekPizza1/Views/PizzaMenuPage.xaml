@@ -24,6 +24,7 @@
             <ViewCell>
               <StackLayout Padding="10">
                 <Label Text="{Binding Name}"
+                       AutomationId="NameLabel"
                        LineBreakMode="NoWrap"
                        Style="{DynamicResource ListItemTextStyle}"
                        FontSize="16"/>

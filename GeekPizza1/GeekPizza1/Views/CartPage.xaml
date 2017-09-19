@@ -17,6 +17,7 @@
                         <ViewCell>
                             <StackLayout Padding="10">
                                 <Label Text="{Binding Pizza.Name}"
+                                       AutomationId="NameLabel"
                                        LineBreakMode="NoWrap"
                                        Style="{DynamicResource ListItemTextStyle}"
                                        FontSize="16"/>
@@ -25,6 +26,7 @@
                                        Style="{DynamicResource ListItemDetailTextStyle}"
                                        FontSize="13"/>
                                 <Label Text="{Binding Quantity}"
+                                       AutomationId="QuantityLabel"
                                        LineBreakMode="NoWrap"
                                        Style="{DynamicResource ListItemDetailTextStyle}"
                                        FontSize="13"/>
