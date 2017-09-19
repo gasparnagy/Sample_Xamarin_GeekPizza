@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeekPizza1\GeekPizza1.Android\GeekPizza1.Android.csproj">
+    <ProjectReference Include="..\GeekPizza\GeekPizza.Android\GeekPizza.Android.csproj">
       <Project>{a27b08dc-0373-44c9-b5ed-962a2e5f5c10}</Project>
-      <Name>GeekPizza1.Android</Name>
+      <Name>GeekPizza.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

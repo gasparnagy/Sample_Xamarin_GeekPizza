@@ -15,7 +15,7 @@ namespace GeekPizza.Tests.UI
                 Console.WriteLine(Environment.CurrentDirectory);
                 return ConfigureApp
                     .Android
-                    .ApkFile(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", @"GeekPizza1\GeekPizza1.Android\bin\Release\com.companyname.GeekPizza1.apk"))
+                    .ApkFile(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", @"GeekPizza\GeekPizza.Android\bin\Release\com.companyname.GeekPizza.apk"))
                     .StartApp();
             }
 
