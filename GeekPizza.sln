@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.iOS", "GeekPizza\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.Tests.UI", "GeekPizza.Tests.UI\GeekPizza.Tests.UI.csproj", "{BC57C097-517C-4CC8-8E26-AC8E653916E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.Specs", "GeekPizza.Specs\GeekPizza.Specs.csproj", "{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhone.Build.0 = Release|Any CPU
 		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Release|iPhone.Build.0 = Release|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
