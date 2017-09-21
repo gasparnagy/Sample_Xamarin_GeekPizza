@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GeekPizza.Specs.Support;
+using NUnit.Framework;
 using Xamarin.UITest;
 
 namespace GeekPizza.Specs.Drivers
@@ -50,6 +51,14 @@ namespace GeekPizza.Specs.Drivers
             if (!IsOnPizzaMenuPage)
                 _app.Back();
             _app.Tap(e => e.Marked("NameLabel").All().Text(pizzaName).Parent());
+
+            // the action is performed completely when the app is on the cart page
+            WaitForCartPage();
+        }
+
+        private void WaitForCartPage()
+        {
+            Wait.For(() => Assert.IsTrue(IsOnCartPage));
         }
     }
 }

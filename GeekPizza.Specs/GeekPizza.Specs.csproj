@@ -84,6 +84,7 @@
     <Compile Include="Support\DynamicDriverSelector.cs" />
     <Compile Include="Support\NavigationStub.cs" />
     <Compile Include="Drivers\ViewModelAppDriver.cs" />
+    <Compile Include="Support\Wait.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
