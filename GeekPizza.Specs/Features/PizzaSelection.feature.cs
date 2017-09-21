@@ -31,7 +31,10 @@ namespace GeekPizza.Specs.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pizza Selection", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pizza Selection", "Rules:\r\n* Should be able to select pizzas\r\n\t* Select a pizza\r\n\t* Select multiple " +
+                    "pizzas\r\n\t* Select the same pizza multiple times\r\n* Should display cart\r\n\t* Cart " +
+                    "is activated on selecting a pizza\r\n\t* Card displays name and quantity of selecte" +
+                    "d pizzas", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -68,16 +71,106 @@ namespace GeekPizza.Specs.Features
         public virtual void SelectAPizza()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a pizza", ((string[])(null)));
-#line 3
+#line 12
 this.ScenarioSetup(scenarioInfo);
-#line 4
+#line 13
  testRunner.Given("I have an empty cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
+#line 14
  testRunner.When("I select the \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 6
+#line 15
  testRunner.Then("the cart should be activated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 7
+#line 16
  testRunner.Then("the cart should contain an \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Select multiple pizzas")]
+        public virtual void SelectMultiplePizzas()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select multiple pizzas", ((string[])(null)));
+#line 18
+this.ScenarioSetup(scenarioInfo);
+#line 19
+ testRunner.Given("I have a cart with an \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 20
+ testRunner.When("I select the \"Chris Matts\' GWT\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then("the cart should contain an \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.And("the cart should contain an \"Chris Matts\' GWT\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Select the same pizza multiple times")]
+        public virtual void SelectTheSamePizzaMultipleTimes()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select the same pizza multiple times", ((string[])(null)));
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 25
+ testRunner.Given("I have a cart with an \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.When("I select the \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.Then("the cart should contain 2 \"Uncle Bob\'s FitNesse\" pizzas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Cart is activated on selecting a pizza")]
+        public virtual void CartIsActivatedOnSelectingAPizza()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart is activated on selecting a pizza", ((string[])(null)));
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line 32
+ testRunner.Given("I have an empty cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+ testRunner.When("I select a pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.Then("the cart should be activated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Card displays name and quantity of selected pizzas")]
+        public virtual void CardDisplaysNameAndQuantityOfSelectedPizzas()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Card displays name and quantity of selected pizzas", ((string[])(null)));
+#line 36
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "name",
+                        "quantity"});
+            table1.AddRow(new string[] {
+                        "Chris Matts\' GWT",
+                        "1"});
+            table1.AddRow(new string[] {
+                        "Uncle Bob\'s FitNesse",
+                        "2"});
+#line 37
+ testRunner.Given("my cart contains the following pizzas", ((string)(null)), table1, "Given ");
+#line 41
+ testRunner.When("I check the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "name",
+                        "quantity"});
+            table2.AddRow(new string[] {
+                        "Chris Matts\' GWT",
+                        "1"});
+            table2.AddRow(new string[] {
+                        "Uncle Bob\'s FitNesse",
+                        "2"});
+#line 42
+ testRunner.Then("the following items should be listed", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

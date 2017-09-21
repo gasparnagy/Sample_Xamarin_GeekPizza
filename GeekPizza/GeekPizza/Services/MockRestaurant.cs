@@ -21,7 +21,7 @@ namespace GeekPizza.Services
             {
                 new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Aslak Hellesøy's Cucumber", Ingredients="Cucumber, Gherkin, Pickles"},
                 new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Uncle Bob's FitNesse", Ingredients="Chicken, Low cal cheese"},
-                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Chris Matts' GTW", Ingredients="Garlic, Wasabi, Tomato"},
+                new PizzaMenuItem { Id = Guid.NewGuid().ToString(), Name = "Chris Matts' GWT", Ingredients="Garlic, Wasabi, Tomato"},
             };
 
             _isInitialized = true;
