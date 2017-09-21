@@ -71,15 +71,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drivers\IAppDriver.cs" />
+    <Compile Include="Drivers\UiAppDriver.cs" />
     <Compile Include="Features\PizzaSelection.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PizzaSelection.feature</DependentUpon>
     </Compile>
     <Compile Include="StepDefinitions\PizzaSelectionSteps.cs" />
-    <Compile Include="StepDefinitions\PizzaSelectionStepsMobile.cs" />
     <Compile Include="Support\AppInitializer.cs" />
     <Compile Include="Support\AsyncHelper.cs" />
+    <Compile Include="Support\DynamicDriverSelector.cs" />
     <Compile Include="Support\NavigationStub.cs" />
     <Compile Include="Drivers\ViewModelAppDriver.cs" />
   </ItemGroup>

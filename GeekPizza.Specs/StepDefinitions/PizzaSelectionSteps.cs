@@ -13,9 +13,9 @@ namespace GeekPizza.Specs.StepDefinitions
     [Binding]
     public class PizzaSelectionSteps
     {
-        private readonly ViewModelAppDriver _appDriver;
+        private readonly IAppDriver _appDriver;
 
-        public PizzaSelectionSteps(ViewModelAppDriver appDriver)
+        public PizzaSelectionSteps(IAppDriver appDriver)
         {
             _appDriver = appDriver;
         }
