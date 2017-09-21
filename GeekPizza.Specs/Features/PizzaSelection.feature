@@ -1,4 +1,5 @@
-﻿Feature: Pizza Selection
+﻿@mobile
+Feature: Pizza Selection
 
 Rules:
 * Should be able to select pizzas
@@ -9,7 +10,6 @@ Rules:
 	* Cart is activated on selecting a pizza
 	* Card displays name and quantity of selected pizzas
 
-@mobile
 Scenario: Select a pizza
 	Given I have an empty cart
 	When I select the "Uncle Bob's FitNesse" pizza

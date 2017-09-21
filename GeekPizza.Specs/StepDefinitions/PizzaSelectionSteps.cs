@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using GeekPizza.Services;
 using GeekPizza.Specs.Support;
 using GeekPizza.ViewModels;
@@ -10,7 +9,7 @@ using TechTalk.SpecFlow;
 
 namespace GeekPizza.Specs.StepDefinitions
 {
-    //[Binding]
+    [Binding]
     public class PizzaSelectionSteps
     {
         private readonly Store _store = new Store(new MockRestaurant());

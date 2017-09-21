@@ -19,6 +19,7 @@ namespace GeekPizza.Specs.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Pizza Selection")]
+    [NUnit.Framework.CategoryAttribute("mobile")]
     public partial class PizzaSelectionFeature
     {
         
@@ -34,7 +35,8 @@ namespace GeekPizza.Specs.Features
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pizza Selection", "Rules:\r\n* Should be able to select pizzas\r\n\t* Select a pizza\r\n\t* Select multiple " +
                     "pizzas\r\n\t* Select the same pizza multiple times\r\n* Should display cart\r\n\t* Cart " +
                     "is activated on selecting a pizza\r\n\t* Card displays name and quantity of selecte" +
-                    "d pizzas", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "d pizzas", ProgrammingLanguage.CSharp, new string[] {
+                        "mobile"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -68,11 +70,9 @@ namespace GeekPizza.Specs.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Select a pizza")]
-        [NUnit.Framework.CategoryAttribute("mobile")]
         public virtual void SelectAPizza()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a pizza", new string[] {
-                        "mobile"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a pizza", ((string[])(null)));
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
