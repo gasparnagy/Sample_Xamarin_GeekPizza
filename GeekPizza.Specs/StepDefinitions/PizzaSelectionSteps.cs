@@ -16,12 +16,24 @@ namespace GeekPizza.Specs.StepDefinitions
         private readonly Store _store = new Store(new MockRestaurant());
         private readonly NavigationStub navigationStub = new NavigationStub();
 
+        [BeforeScenario]
+        public void InitializeApp()
+        {
+            ContentBasePage.IsTesting = true;
+            _store.InitializeAsync().Wait();
+        }
+
         [Given(@"I have an empty cart")]
         public void GivenIHaveAnEmptyCart()
         {
-            ContentBasePage.IsTesting = true;
         }
-        
+
+        [Given(@"I have a cart with an ""(.*)"" pizza")]
+        public void GivenIHaveACartWithAnPizza(string pizzaName)
+        {
+            _store.AddToCart(_store.PizzaMenuItems.First(i => i.Name == pizzaName));
+        }
+
         [When(@"I select the ""(.*)"" pizza")]
         public void WhenISelectThePizza(string pizzaName)
         {
