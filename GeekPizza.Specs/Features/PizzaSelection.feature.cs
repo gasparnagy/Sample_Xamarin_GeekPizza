@@ -68,17 +68,17 @@ namespace GeekPizza.Specs.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Select a pizza")]
+        [NUnit.Framework.CategoryAttribute("mobile")]
         public virtual void SelectAPizza()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a pizza", ((string[])(null)));
-#line 12
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a pizza", new string[] {
+                        "mobile"});
 #line 13
- testRunner.Given("I have an empty cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.When("I select the \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have an empty cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.Then("the cart should be activated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I select the \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.Then("the cart should contain an \"Uncle Bob\'s FitNesse\" pizza", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

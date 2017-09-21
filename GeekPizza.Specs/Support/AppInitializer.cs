@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using Xamarin.UITest;
 
@@ -10,8 +11,10 @@ namespace GeekPizza.Specs.Support
         {
             if (platform == Platform.Android)
             {
+                Console.WriteLine(Environment.CurrentDirectory);
                 return ConfigureApp
                     .Android
+                    .ApkFile(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", @"GeekPizza\GeekPizza.Android\bin\Release\com.companyname.GeekPizza.apk"))
                     .StartApp();
             }
 

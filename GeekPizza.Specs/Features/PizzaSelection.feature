@@ -9,10 +9,10 @@ Rules:
 	* Cart is activated on selecting a pizza
 	* Card displays name and quantity of selected pizzas
 
+@mobile
 Scenario: Select a pizza
 	Given I have an empty cart
 	When I select the "Uncle Bob's FitNesse" pizza
-	Then the cart should be activated
 	Then the cart should contain an "Uncle Bob's FitNesse" pizza
 
 Scenario: Select multiple pizzas

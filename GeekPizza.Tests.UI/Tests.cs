@@ -35,7 +35,7 @@ namespace GeekPizza.Tests.UI
         [Test]
         public void Test1()
         {
-            app.Tap(e => e.Marked("NameLabel").All().Text("Chris Matts' GTW").Parent());
+            app.Tap(e => e.Marked("NameLabel").All().Text("Chris Matts' GWT").Parent());
             app.Back();
             //app.Tap(e => e.Marked("NameLabel").All().Text("Uncle Bob's FitNesse").Parent());
             //app.Back();

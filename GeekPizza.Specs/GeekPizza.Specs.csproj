@@ -76,6 +76,7 @@
       <DependentUpon>PizzaSelection.feature</DependentUpon>
     </Compile>
     <Compile Include="StepDefinitions\PizzaSelectionSteps.cs" />
+    <Compile Include="StepDefinitions\PizzaSelectionStepsMobile.cs" />
     <Compile Include="Support\AppInitializer.cs" />
     <Compile Include="Support\NavigationStub.cs" />
   </ItemGroup>
