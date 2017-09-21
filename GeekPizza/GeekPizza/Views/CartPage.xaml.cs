@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace GeekPizza.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CartPage : ContentPage
+	public partial class CartPage : ContentBasePage
 	{
 		public CartPage(CartViewModel viewModel)
 		{

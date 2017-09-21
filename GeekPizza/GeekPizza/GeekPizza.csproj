@@ -62,6 +62,7 @@
     <Compile Include="Views\CartPage.xaml.cs">
       <DependentUpon>CartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ContentBasePage.cs" />
     <Compile Include="Views\EnterAddressPage.xaml.cs">
       <DependentUpon>EnterAddressPage.xaml</DependentUpon>
     </Compile>
