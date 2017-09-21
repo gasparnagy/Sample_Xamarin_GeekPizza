@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.Android", "GeekPi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.iOS", "GeekPizza\GeekPizza.iOS\GeekPizza.iOS.csproj", "{C659E1B7-645E-4E07-AEDC-2985763BF5E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.Tests.UI", "GeekPizza.Tests.UI\GeekPizza.Tests.UI.csproj", "{BC57C097-517C-4CC8-8E26-AC8E653916E9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekPizza.Specs", "GeekPizza.Specs\GeekPizza.Specs.csproj", "{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}"
 EndProject
 Global
@@ -63,18 +61,6 @@ Global
 		{C659E1B7-645E-4E07-AEDC-2985763BF5E4}.Release|iPhone.Build.0 = Release|iPhone
 		{C659E1B7-645E-4E07-AEDC-2985763BF5E4}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{C659E1B7-645E-4E07-AEDC-2985763BF5E4}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhone.Build.0 = Release|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{BC57C097-517C-4CC8-8E26-AC8E653916E9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8838CF3D-9D04-4EED-B8D9-5D96F88B1E29}.Debug|iPhone.ActiveCfg = Debug|Any CPU
