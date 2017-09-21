@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drivers\IAppDriver.cs" />
     <Compile Include="Features\PizzaSelection.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +81,7 @@
     <Compile Include="Support\AppInitializer.cs" />
     <Compile Include="Support\AsyncHelper.cs" />
     <Compile Include="Support\NavigationStub.cs" />
+    <Compile Include="Drivers\ViewModelAppDriver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

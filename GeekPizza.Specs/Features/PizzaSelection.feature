@@ -1,5 +1,4 @@
-﻿@mobile
-Feature: Pizza Selection
+﻿Feature: Pizza Selection
 
 Rules:
 * Should be able to select pizzas
