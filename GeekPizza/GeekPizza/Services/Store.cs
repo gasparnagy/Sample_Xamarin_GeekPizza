@@ -38,7 +38,11 @@ namespace GeekPizza.Services
 
         public void AddToCart(PizzaMenuItem item)
         {
-            Order.Items.Add(new PizzaOrderItem(item, 1));
+            var existingItem = Order.Items.FirstOrDefault(i => i.Pizza.Name == item.Name);
+            if (existingItem == null)
+                Order.Items.Add(new PizzaOrderItem(item, 1));
+            else
+                existingItem.Quantity++;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace GeekPizza.Specs.StepDefinitions
         [Given(@"I have an empty cart")]
         public void GivenIHaveAnEmptyCart()
         {
+            CollectionAssert.IsEmpty(_store.Order.Items);
         }
 
         [Given(@"I have a cart with an ""(.*)"" pizza")]
@@ -55,7 +56,15 @@ namespace GeekPizza.Specs.StepDefinitions
         [Then(@"the cart should contain an ""(.*)"" pizza")]
         public void ThenTheCartShouldContainAnPizza(string expectedPizzaName)
         {
-            Assert.IsTrue(_store.Order.Items.Any(i => i.Pizza.Name == expectedPizzaName));            
+            ThenTheCartShouldContainPizzas(1, expectedPizzaName);
+        }
+
+        [Then(@"the cart should contain (.*) ""(.*)"" pizzas")]
+        public void ThenTheCartShouldContainPizzas(int expectedQuantity, string expectedPizzaName)
+        {
+            var cartItem = _store.Order.Items.FirstOrDefault(i => i.Pizza.Name == expectedPizzaName);
+            Assert.IsNotNull(cartItem, "there should be a pizza <{0}> in the cart", expectedPizzaName);
+            Assert.AreEqual(expectedQuantity, cartItem.Quantity, "the quantity of the <{0}> pizza in the cart should be {1}", expectedPizzaName, expectedQuantity);
         }
     }
 }
