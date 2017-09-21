@@ -5,16 +5,16 @@ using Xamarin.UITest;
 
 namespace GeekPizza.Specs.Drivers
 {
-    public class UiAppDriver : IAppDriver
+    public abstract class UiAppDriver : IAppDriver
     {
         private readonly IApp _app;
 
         public bool IsOnCartPage => !IsOnPizzaMenuPage && _app.Query(e => e.Marked("Cart")).Any();
         private bool IsOnPizzaMenuPage => _app.Query(e => e.Marked("Pizza Menu")).Any();
 
-        public UiAppDriver()
+        protected UiAppDriver(Platform platform)
         {
-            _app = AppInitializer.StartApp(Platform.Android);
+            _app = AppInitializer.StartApp(platform);
         }
 
         public void EnsureItemInCart(string pizzaName, int quantity)
@@ -27,7 +27,6 @@ namespace GeekPizza.Specs.Drivers
 
         public void EnsureOnCartPage()
         {
-            System.Threading.Thread.Sleep(1000);
             if (!IsOnCartPage)
                 throw new NotImplementedException("go to cart");
         }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GeekPizza.Specs.Drivers;
 using TechTalk.SpecFlow;
 
@@ -14,10 +11,18 @@ namespace GeekPizza.Specs.Support
         [BeforeScenario(Order = -100)]
         public void Init()
         {
-            if (Environment.GetEnvironmentVariable("AUTOMODE") == "UI")
-                ScenarioContext.ScenarioContainer.RegisterTypeAs<UiAppDriver, IAppDriver>();
-            else
-                ScenarioContext.ScenarioContainer.RegisterTypeAs<ViewModelAppDriver, IAppDriver>();
+            switch (Environment.GetEnvironmentVariable("AUTOMODE"))
+            {
+                case "Android":
+                    ScenarioContext.ScenarioContainer.RegisterTypeAs<AndroidUiAppDriver, IAppDriver>();
+                    break;
+                case "iOS":
+                    ScenarioContext.ScenarioContainer.RegisterTypeAs<iOSUiAppDriver, IAppDriver>();
+                    break;
+                default:
+                    ScenarioContext.ScenarioContainer.RegisterTypeAs<ViewModelAppDriver, IAppDriver>();
+                    break;
+            }
         }
     }
 }
