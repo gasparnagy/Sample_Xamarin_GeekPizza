@@ -18,7 +18,7 @@ namespace GeekPizza.ViewModels
         public string OrderDetails =>
             string.Join(Environment.NewLine, Order.Items.Select(i => $"{i.Pizza.Name} -- {i.Quantity}pcs"));
 
-        public ThankYouViewModel(Store store)
+        public ThankYouViewModel(IStore store)
         {
             Title = "Thank you!";
             Order = store.Order;

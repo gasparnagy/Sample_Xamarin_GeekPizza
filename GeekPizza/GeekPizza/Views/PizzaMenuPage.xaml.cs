@@ -10,7 +10,7 @@ namespace GeekPizza.Views
     {
         private readonly PizzaMenuViewModel _viewModel;
 
-        public PizzaMenuPage(Store store)
+        public PizzaMenuPage(IStore store)
         {
             InitializeComponent();
 

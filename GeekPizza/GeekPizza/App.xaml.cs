@@ -18,8 +18,7 @@ namespace GeekPizza
 
         private void SetMainPage()
         {
-            var restaurant = DependencyService.Get<IRestaurant>();
-            var store = new Store(restaurant);
+            var store = DependencyService.Get<IStore>();
 
             MainPage = new NavigationPage(new PizzaMenuPage(store));
         }

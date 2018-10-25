@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using GeekPizza.Services.Testing;
 using GeekPizza.Specs.Support;
 using NUnit.Framework;
 using Xamarin.UITest;
@@ -18,18 +21,26 @@ namespace GeekPizza.Specs.Drivers
             _app = AppInitializer.StartApp(platform);
         }
 
+        public void CallBackdoor(Expression<Action<ITestBackdoor>> backdoorAction)
+        {
+            var methodCallExpression = (MethodCallExpression) backdoorAction.Body;
+            string methodName = methodCallExpression.Method.Name;
+            string args = string.Join(",", methodCallExpression.Arguments
+                .Select(paramExpr => Expression.Lambda(paramExpr).Compile().DynamicInvoke().ToString()));
+            _app.Invoke("CallBackdoor", new object[] { methodName, args });
+        }
+
         public void EnsureItemInCart(string pizzaName, int quantity)
         {
-            for (int i = 0; i < quantity; i++)
-            {
-                SelectPizza(pizzaName);
-            }
+            CallBackdoor(t => t.EnsureItemInCart(pizzaName, quantity));
+            //for (int i = 0; i < quantity; i++)
+            //    SelectPizza(pizzaName);
         }
 
         public void EnsureOnCartPage()
         {
             if (!IsOnCartPage)
-                throw new NotImplementedException("go to cart");
+                _app.Tap("Show Cart");
         }
 
         public int GetCartQuantity(string expectedPizzaName)

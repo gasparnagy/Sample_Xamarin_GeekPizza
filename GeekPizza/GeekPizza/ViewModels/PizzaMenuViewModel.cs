@@ -12,13 +12,13 @@ namespace GeekPizza.ViewModels
 {
     public class PizzaMenuViewModel : BaseViewModel
     {
-        private readonly Store _store;
+        private readonly IStore _store;
         public ObservableRangeCollection<PizzaMenuItem> Items { get; }
         public ICommand InitializeStoreCommand { get; }
         public ICommand ItemTappedCommand { get; }
         public ICommand ShowCartCommand { get; }
 
-        public PizzaMenuViewModel(Store store)
+        public PizzaMenuViewModel(IStore store)
         {
             _store = store;
             Title = "Pizza Menu";

@@ -3,15 +3,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeekPizza.Helpers;
 using GeekPizza.Models;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(GeekPizza.Services.Store))]
 namespace GeekPizza.Services
 {
-    public class Store
+    public class Store : IStore
     {
         private readonly IRestaurant _restaurant;
         private bool _isInitialized = false;
         public PizzaOrder Order { get; }
         public ObservableRangeCollection<PizzaMenuItem> PizzaMenuItems { get; }
+
+        public Store() : this(DependencyService.Get<IRestaurant>())
+        {
+        }
 
         public Store(IRestaurant restaurant)
         {

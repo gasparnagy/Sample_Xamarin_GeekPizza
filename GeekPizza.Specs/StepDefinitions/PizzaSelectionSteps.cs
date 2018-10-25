@@ -20,6 +20,11 @@ namespace GeekPizza.Specs.StepDefinitions
             _appDriver = appDriver;
         }
 
+        [BeforeScenario]
+        public void StartApp()
+        {
+        }
+
         [Given(@"I have an empty cart")]
         public void GivenIHaveAnEmptyCart()
         {

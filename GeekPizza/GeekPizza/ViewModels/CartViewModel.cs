@@ -17,7 +17,7 @@ namespace GeekPizza.ViewModels
         public ObservableRangeCollection<PizzaOrderItem> Items { get; set; }
         public ICommand OrderCommand { get; }
 
-        public CartViewModel(Store store)
+        public CartViewModel(IStore store)
         {
             Title = "Cart";
             Items = store.Order.Items;
