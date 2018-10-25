@@ -26,6 +26,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NUnit" Version="2.6.4" />
@@ -45,8 +46,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drivers\AndroidUiAppDriver.cs" />
+    <Compile Include="Drivers\IAppDriver.cs" />
+    <Compile Include="Drivers\iOSUiAppDriver.cs" />
+    <Compile Include="Drivers\UiAppDriver.cs" />
+    <Compile Include="Drivers\ViewModelAppDriver.cs" />
+    <Compile Include="StepDefinitions\PizzaSelectionSteps.cs" />
+    <Compile Include="Support\AppInitializer.cs" />
+    <Compile Include="Support\DynamicDriverSelector.cs" />
+    <Compile Include="Support\NavigationStub.cs" />
+    <Compile Include="Support\Wait.cs" />
     <Compile Include="Tests.cs" />
-    <Compile Include="AppInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
