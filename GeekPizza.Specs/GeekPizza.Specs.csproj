@@ -56,7 +56,6 @@
     <Compile Include="Support\DynamicDriverSelector.cs" />
     <Compile Include="Support\NavigationStub.cs" />
     <Compile Include="Support\Wait.cs" />
-    <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
