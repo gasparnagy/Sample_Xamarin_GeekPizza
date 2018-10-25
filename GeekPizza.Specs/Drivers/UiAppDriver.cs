@@ -11,14 +11,15 @@ namespace GeekPizza.Specs.Drivers
 {
     public abstract class UiAppDriver : IAppDriver
     {
-        private readonly IApp _app;
+        private readonly Platform _platform;
+        private static IApp _app;
 
         public bool IsOnCartPage => !IsOnPizzaMenuPage && _app.Query(e => e.Marked("Cart")).Any();
         private bool IsOnPizzaMenuPage => _app.Query(e => e.Marked("Pizza Menu")).Any();
 
         protected UiAppDriver(Platform platform)
         {
-            _app = AppInitializer.StartApp(platform);
+            _platform = platform;
         }
 
         public void CallBackdoor(Expression<Action<ITestBackdoor>> backdoorAction)
@@ -28,6 +29,20 @@ namespace GeekPizza.Specs.Drivers
             string args = string.Join(",", methodCallExpression.Arguments
                 .Select(paramExpr => Expression.Lambda(paramExpr).Compile().DynamicInvoke().ToString()));
             _app.Invoke("CallBackdoor", new object[] { methodName, args });
+        }
+
+        public void ResetApp()
+        {
+            if (_app == null)
+                _app = AppInitializer.StartApp(_platform);
+            else
+            {
+                // navigate back to home page (in real app we need a smarter way)
+                if (IsOnCartPage)
+                    _app.Back();
+                // reset state
+                CallBackdoor(t => t.ResetCart());
+            }
         }
 
         public void EnsureItemInCart(string pizzaName, int quantity)

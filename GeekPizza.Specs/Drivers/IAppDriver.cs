@@ -4,6 +4,7 @@
     {
         bool IsOnCartPage { get; }
 
+        void ResetApp();
         void EnsureItemInCart(string pizzaName, int quantity);
         void EnsureOnCartPage();
         int GetCartQuantity(string expectedPizzaName);

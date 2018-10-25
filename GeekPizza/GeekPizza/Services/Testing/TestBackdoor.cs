@@ -7,6 +7,7 @@ namespace GeekPizza.Services.Testing
     public interface ITestBackdoor
     {
         void EnsureItemInCart(string pizzaName, int quantity);
+        void ResetCart();
     }
 
     public class TestBackdoor : ITestBackdoor
@@ -26,6 +27,11 @@ namespace GeekPizza.Services.Testing
         {
             for (int i = 0; i < quantity; i++)
                 _store.AddToCart(_store.PizzaMenuItems.First(item => item.Name == pizzaName));
+        }
+
+        public void ResetCart()
+        {
+            _store.ClearOrder();
         }
     }
 }

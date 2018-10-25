@@ -20,6 +20,11 @@ namespace GeekPizza.Specs.Drivers
             _store.InitializeAsync().Wait();
         }
 
+        public void ResetApp()
+        {
+            _store.ClearOrder();
+        }
+
         public void EnsureItemInCart(string pizzaName, int quantity)
         {
             for (int i = 0; i < quantity; i++)

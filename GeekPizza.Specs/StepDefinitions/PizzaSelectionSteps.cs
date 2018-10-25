@@ -23,6 +23,7 @@ namespace GeekPizza.Specs.StepDefinitions
         [BeforeScenario]
         public void StartApp()
         {
+            _appDriver.ResetApp();
         }
 
         [Given(@"I have an empty cart")]
