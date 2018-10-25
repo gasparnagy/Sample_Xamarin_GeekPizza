@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeekPizza.Views.ThankYouPage"
+             Title="{Binding Title}"
+             Navigation="{Binding Navigation}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Pizza Menu" Command="{Binding ShowMenuCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Spacing="20" Padding="15">
+                <Label Text="Delivery Address" FontSize="Large" />
+                <Label Text="Street address" FontSize="Medium" />
+                <Label Text="{Binding Order.DeliveryAddress.StreetAddress}" FontSize="Small" />
+                <Label Text="City" FontSize="Medium" />
+                <Label Text="{Binding Order.DeliveryAddress.City}" FontSize="Small" />
+                <Label Text="Zip" FontSize="Medium" />
+                <Label Text="{Binding Order.DeliveryAddress.Zip}" FontSize="Small" />
+                <Label Text="Order Details" FontSize="Large" />
+                <Label Text="{Binding OrderDetails}" FontSize="Small" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

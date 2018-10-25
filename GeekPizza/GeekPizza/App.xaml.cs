@@ -1,4 +1,6 @@
 ﻿using System;
+using GeekPizza.Services;
+using GeekPizza.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +13,15 @@ namespace GeekPizza
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            SetMainPage();
+        }
+
+        private void SetMainPage()
+        {
+            var restaurant = DependencyService.Get<IRestaurant>();
+            var store = new Store(restaurant);
+
+            MainPage = new NavigationPage(new PizzaMenuPage(store));
         }
 
         protected override void OnStart()
