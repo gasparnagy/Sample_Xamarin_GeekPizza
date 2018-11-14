@@ -61,6 +61,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Features\PizzaSelection.feature" />
+    <None Include="Features\ShoppingCart.feature" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterUpdateFeatureFilesInProject">
