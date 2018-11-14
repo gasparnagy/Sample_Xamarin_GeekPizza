@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using GeekPizza.Models;
 using GeekPizza.Services;
 using GeekPizza.Specs.Support;
 using GeekPizza.ViewModels;
@@ -27,8 +28,8 @@ namespace GeekPizza.Specs.Drivers
 
         public void EnsureItemInCart(string pizzaName, int quantity)
         {
-            for (int i = 0; i < quantity; i++)
-                _store.AddToCart(_store.PizzaMenuItems.First(item => item.Name == pizzaName));
+            var itemToAdd = _store.PizzaMenuItems.First(item => item.Name == pizzaName);
+            _store.Order.Items.Add(new PizzaOrderItem(itemToAdd, quantity));
         }
 
         public void SelectPizza(string pizzaName)
